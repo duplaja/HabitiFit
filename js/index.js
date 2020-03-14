@@ -47,14 +47,14 @@ $(document).ready(function() {
        
        
        $('#get-data').click(function(){
-           ga('send', 'pageview', '/manual-refresh');
+           //ga('send', 'pageview', '/manual-refresh');
            get_data();
+           location.reload();
        });
        
        $('#logout').click(function(){
            r = confirm("Are you sure you want to reset? You shouldn't log in again until next cron");
             if (r == true) {
-                ga('send', 'pageview', '/logout');
                 localStorage.clear();
             }
        });
@@ -161,9 +161,10 @@ $(document).ready(function() {
        
        window.setInterval(function(){
            //reload the page instead of just refreshing it, so that users can use the most updated version of the app
-           location.reload(true);
            //ga('send', 'pageview', '/auto-refresh');
-           //get_data();
+           get_data();
+           location.reload(true);
+
         }, 180000)
        
    }else{
