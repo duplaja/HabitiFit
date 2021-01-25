@@ -2,7 +2,7 @@
 
 $curl = curl_init();
 $curlArray = array(
-    CURLOPT_RETURNTRANSFER => true, 
+    CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HEADER => false,
     CURLOPT_HTTPHEADER => array(
         "Content-type: application/json",
